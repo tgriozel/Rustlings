@@ -13,10 +13,14 @@
 //
 // No hints this time ;)
 
-// I AM NOT DONE
+const CLIFF_VALUE: i32 = 40;
+const PRE_CLIFF_RATIO: i32 = 2;
+const POST_CLIFF_RATIO: i32 = 1;
 
-// Put your function here!
-// fn calculate_price_of_apples {
+fn calculate_price_of_apples(apple_count: i32) -> i64 {
+    let ratio = if apple_count <= CLIFF_VALUE { PRE_CLIFF_RATIO } else { POST_CLIFF_RATIO };
+    ratio as i64 * apple_count as i64
+}
 
 // Don't modify this function!
 #[test]
